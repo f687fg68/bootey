@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      (function() {
+        // Prevent unhandled exception if an external/injected script attempts to assign to a getter-only fetch
+        window.addEventListener('error', function(event) {
+          if (event && event.message && event.message.indexOf('fetch') !== -1 && event.message.indexOf('getter') !== -1) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        window.addEventListener('unhandledrejection', function(event) {
+          if (event && event.reason && String(event.reason).indexOf('fetch') !== -1 && String(event.reason).indexOf('getter') !== -1) {
+            event.preventDefault();
+            event.stopImmediatePropagation();
+            return true;
+          }
+        }, true);
+
+        // Define a setter for window.fetch if only a getter exists
+        try {
+          var targets = [window, Window.prototype];
+          for (var i = 0; i < targets.length; i++) {
+            var target = targets[i];
+            var desc = Object.getOwnPropertyDescriptor(target, 'fetch');
+            if (desc && !desc.set) {
+              var currentFetch = window.fetch ? window.fetch.bind(window) : null;
+              Object.defineProperty(target, 'fetch', {
+                get: function() {
+                  return currentFetch;
+                },
+                set: function(fn) {
+                  currentFetch = fn;
+                },
+                configurable: true,
+                enumerable: true
+              });
+            }
+          }
+        } catch (e) {
+          // Ignore if descriptor is non-configurable
+        }
+      })();
+    </script>
+    <title>bootey — Native Desktop App</title>
+    <meta name="description" content="Download bootey. Yours instantly. The ultimate native desktop app for power users. Fast, offline-first, no accounts, no subscriptions, just pure productivity." />
+    <meta property="og:title" content="bootey — Native Desktop App" />
+    <meta property="og:description" content="Download bootey for macOS and Windows. Thoughtfully designed, perfectly native — no accounts, no subscriptions, just pure productivity." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#FAF7F2] text-[#181614] antialiased selection:bg-[#b4532a]/20 selection:text-[#b4532a]">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

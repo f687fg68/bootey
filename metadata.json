@@ -1,0 +1,6 @@
+{
+  "name": "bootey — Native Desktop App",
+  "description": "Download bootey. Yours instantly. The ultimate native desktop app for power users. Fast, offline-first, no accounts, no subscriptions, just pure productivity.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
