@@ -186,7 +186,7 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-2.5 text-xs text-[#756F66]">
               <li>
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/MINECONCEPTS"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -197,7 +197,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/mineconcepts5/?hl=en"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -208,7 +208,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://youtube.com"
+                  href="https://www.youtube.com/@mineconcepts-e4d"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -219,7 +219,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/profile.php?id=61586366006010"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -230,7 +230,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://tiktok.com"
+                  href="https://www.tiktok.com/@mineconcepts54"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -241,7 +241,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://pinterest.com"
+                  href="https://za.pinterest.com/t45trdds/_profile/"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
@@ -252,7 +252,7 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://threads.net"
+                  href="https://www.threads.com/@mineconcepts5?hl=en"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
