@@ -4,12 +4,8 @@ import {
   ShieldCheck, 
   HelpCircle, 
   FileCheck, 
-  Send, 
   ArrowLeft, 
   CheckCircle2, 
-  Mail, 
-  Building, 
-  Clock, 
   ExternalLink,
   ChevronDown,
   Info,
@@ -160,7 +156,7 @@ export const LicensingPage: React.FC<PageProps> = ({ onBack }) => {
               7. Refund and Termination Policy
             </h2>
             <p>
-              Due to the immediate, non-retractable, and digital nature of instant file downloads, bootey does not offer refunds once a purchase is completed and files are unlocked. We kindly invite you to review product specifications and previews carefully prior to completing your purchase. Should you encounter any technical difficulty accessing your files, please contact us at o88gfdde@gmail.com and our team will promptly assist you in ensuring you receive your complete download package.
+              Because our digital products are delivered as immediate, irrevocable downloads of unencrypted spreadsheets and guides, bootey does not offer refunds once an order is placed and digital packages are unlocked. We warmly invite you to review all toolkit details, table of contents previews, and format guides prior to checkout. If you ever encounter any technical questions or file access difficulties, our support team will promptly assist you at o88gfdde@gmail.com to make sure you have complete, seamless access to your files.
             </p>
           </div>
         </div>
@@ -442,11 +438,15 @@ export const FAQsPage: React.FC<PageProps> = ({ onBack }) => {
     },
     {
       q: 'What should I do if my download link has expired?',
-      a: 'For security reasons, secure email download links are active for 7 days. If your link expires before you can save the files to your device, simply visit our Contact Studio page or email o88gfdde@gmail.com with your purchase confirmation, and our automated queue will instantly re-issue a fresh secure link.'
+      a: 'For security reasons, secure email download links are active for 7 days. If your link expires before you can save the files to your device, simply email o88gfdde@gmail.com with your purchase confirmation, and our automated queue will promptly assist you with link access.'
+    },
+    {
+      q: 'What is your refund policy?',
+      a: 'Because our toolkits are delivered as instant digital packages (.ZIP) containing fully unlocked, editable spreadsheets, templates, and guides with immediate access upon purchase, all digital sales are final and we do not offer refunds. We warmly encourage you to review the product specifications, table of contents, and sample excerpts before placing your order. If you encounter any technical difficulty accessing, unzipping, or using your files, our friendly support team is always ready to assist at o88gfdde@gmail.com.'
     },
     {
       q: 'Do you offer custom tailoring or personalized workbook creation services?',
-      a: 'Yes. If you require a custom accounting template, bespoke clinical worksheets, or specialized operations dashboards customized for your unique business, we offer dedicated custom creation contracts. Please fill out our contact gateway.'
+      a: 'Yes. If you require a custom accounting template, bespoke clinical worksheets, or specialized operations dashboards customized for your unique business, we offer dedicated custom creation contracts. Please email o88gfdde@gmail.com.'
     }
   ];
 
@@ -496,191 +496,6 @@ export const FAQsPage: React.FC<PageProps> = ({ onBack }) => {
               </div>
             );
           })}
-        </div>
-      </div>
-    </div>
-  );
-};
-
-
-// ==========================================
-// 5. CONTACT STUDIO PAGE
-// ==========================================
-export const ContactPage: React.FC<PageProps> = ({ onBack }) => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    category: 'general',
-    message: ''
-  });
-  const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      setSubmitted(true);
-    }, 1200);
-  };
-
-  return (
-    <div className="bg-[#FAF7F2] text-[#181614] min-h-screen py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
-        <button
-          onClick={onBack}
-          className="group inline-flex items-center gap-2 text-xs font-mono-code font-bold uppercase tracking-widest text-[#756F66] hover:text-[#181614] transition-colors mb-12 cursor-pointer"
-        >
-          <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-          <span>Back to Library</span>
-        </button>
-
-        <div className="space-y-4 mb-12">
-          <span className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#a8422b]">
-            STUDIO COMMUNICATIONS
-          </span>
-          <h1 className="text-4xl sm:text-5xl font-editorial font-bold tracking-tight text-[#181614]">
-            Contact the Studio
-          </h1>
-          <p className="text-sm font-mono-code text-[#756F66]">
-            SUPPORT CHANNELS · INQUIRIES · TAILORED BUILD REQUESTS
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Left: Contact Info */}
-          <div className="space-y-8 md:col-span-1">
-            <div className="space-y-3">
-              <h3 className="font-mono-code text-xs font-bold uppercase tracking-wide text-[#181614] flex items-center gap-1.5">
-                <Mail className="w-4 h-4 text-[#a8422b]" />
-                Direct Email
-              </h3>
-              <p className="text-sm text-[#524c44]">
-                <a href="mailto:o88gfdde@gmail.com" className="font-serif font-bold underline hover:text-[#a8422b]">
-                  o88gfdde@gmail.com
-                </a>
-              </p>
-              <p className="text-xs text-[#756F66] leading-relaxed">
-                For prompt help with download links, licenses, and technical queries.
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="font-mono-code text-xs font-bold uppercase tracking-wide text-[#181614] flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-[#a8422b]" />
-                Response SLA
-              </h3>
-              <p className="text-xs text-[#524c44] leading-relaxed">
-                We respond to all verified buyer support tickets within **2 hours** during business hours (9 AM – 6 PM PST, Monday through Friday).
-              </p>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="font-mono-code text-xs font-bold uppercase tracking-wide text-[#181614] flex items-center gap-1.5">
-                <Building className="w-4 h-4 text-[#a8422b]" />
-                Mailing Registry
-              </h3>
-              <p className="text-xs text-[#524c44] leading-relaxed font-mono-code">
-                bootey Studio Ltd.<br />
-                Suite 404, Paper Wharf Road<br />
-                Seattle, WA 98101
-              </p>
-            </div>
-          </div>
-
-          {/* Right: Contact Form */}
-          <div className="md:col-span-2">
-            {submitted ? (
-              <div className="p-8 rounded-2xl bg-[#EBE4D8]/30 border border-[#d3cbbd] text-center space-y-4 animate-in fade-in duration-200">
-                <CheckCircle2 className="w-12 h-12 text-[#a8422b] mx-auto" />
-                <h3 className="font-serif font-bold text-xl text-[#181614]">
-                  Inquiry Dispatched Successfully
-                </h3>
-                <p className="text-xs text-[#524c44] leading-relaxed max-w-md mx-auto">
-                  Your message has been assigned a priority routing token. A studio editor will review your details and respond to <strong>{formData.email}</strong> shortly.
-                </p>
-                <button
-                  onClick={() => {
-                    setSubmitted(false);
-                    setFormData({ name: '', email: '', category: 'general', message: '' });
-                  }}
-                  className="inline-flex items-center gap-1.5 text-xs font-mono-code font-bold uppercase tracking-wider text-[#a8422b] hover:text-[#181614] transition-colors pt-2 cursor-pointer"
-                >
-                  <span>Submit Another Message</span>
-                </button>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="p-6 rounded-2xl bg-white border border-[#EBE4D8] space-y-5 shadow-2xs">
-                <div>
-                  <label className="block text-[10px] font-mono-code font-bold uppercase tracking-wider text-[#756F66] mb-1.5">
-                    Your Full Name
-                  </label>
-                  <input
-                    type="text"
-                    required
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                    placeholder="E.g., Dr. Hannah Brooks"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#EBE4D8] focus:outline-none focus:border-[#181614] text-xs placeholder-[#a0988c] bg-[#FAF7F2]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono-code font-bold uppercase tracking-wider text-[#756F66] mb-1.5">
-                    Professional Email
-                  </label>
-                  <input
-                    type="email"
-                    required
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    placeholder="you@domain.com"
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#EBE4D8] focus:outline-none focus:border-[#181614] text-xs placeholder-[#a0988c] bg-[#FAF7F2]"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono-code font-bold uppercase tracking-wider text-[#756F66] mb-1.5">
-                    Topic of Inquiry
-                  </label>
-                  <select
-                    value={formData.category}
-                    onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#EBE4D8] focus:outline-none focus:border-[#181614] text-xs bg-[#FAF7F2] text-[#181614]"
-                  >
-                    <option value="general">General Support Question</option>
-                    <option value="billing">License &amp; Order Issue</option>
-                    <option value="custom">Custom Template Creation Request</option>
-                    <option value="collaboration">Studio Partnership Proposal</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label className="block text-[10px] font-mono-code font-bold uppercase tracking-wider text-[#756F66] mb-1.5">
-                    Message Description
-                  </label>
-                  <textarea
-                    required
-                    rows={5}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                    placeholder="Describe your inquiry in detail. Include any relevant toolkit titles or customized specifications..."
-                    className="w-full px-4 py-2.5 rounded-xl border border-[#EBE4D8] focus:outline-none focus:border-[#181614] text-xs placeholder-[#a0988c] bg-[#FAF7F2] resize-none"
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={loading}
-                  className="w-full py-3 px-4 rounded-xl bg-[#181614] hover:bg-[#a8422b] text-white font-mono-code font-bold text-xs tracking-widest uppercase transition-all disabled:opacity-50 inline-flex items-center justify-center gap-2 cursor-pointer"
-                >
-                  <span>{loading ? 'DISPATCHING INQUIRY...' : 'DISPATCH TO STUDIO'}</span>
-                  <Send className="w-3.5 h-3.5" />
-                </button>
-              </form>
-            )}
-          </div>
         </div>
       </div>
     </div>
@@ -982,10 +797,10 @@ export const TermsOfPurchasePage: React.FC<PageProps> = ({ onBack }) => {
               3. Refund and Exchange Policy
             </h2>
             <p>
-              Because digital assets are instantly delivered, non-tangible, and non-retractable upon purchase, <strong>all sales are strictly final and no refunds are offered</strong>. We kindly ask that you carefully review product details, included file formats, and preview descriptions prior to completing your order.
+              Because our digital toolkits are delivered instantly as full, unencrypted file archives (.ZIP) upon purchase, <strong>all digital sales are final and we do not offer refunds</strong>. We warmly encourage you to review product descriptions, included formats, and sample previews before completing your order.
             </p>
             <p>
-              If you experience any technical difficulties downloading or opening your files, please write to us at o88gfdde@gmail.com with your order details, and our support team will be delighted to assist you in resolving any file access issues promptly.
+              If you ever experience any difficulty downloading, unzipping, or opening your files, please reach out to us at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a>. Our support team is always delighted to assist you and ensure you have full access to your purchase.
             </p>
           </div>
 
@@ -1217,7 +1032,16 @@ export const TermsAndDisclaimerPage: React.FC<PageProps> = ({ onBack }) => {
 
           <div className="border-t border-[#EBE4D8] pt-8 space-y-4">
             <h2 className="text-lg font-bold font-serif text-[#181614]">
-              8. General Provisions and Dispute Resolution
+              8. Digital Fulfillment and Refund Policy
+            </h2>
+            <p>
+              Due to the immediate digital fulfillment and irrevocability of downloadable ZIP packages containing unlocked templates, bootey does not offer refunds once an order is placed and files are unlocked. We encourage buyers to explore all product previews and documentation prior to checkout. Our support team is always available to help at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a> should you need any technical assistance with accessing your files.
+            </p>
+          </div>
+
+          <div className="border-t border-[#EBE4D8] pt-8 space-y-4">
+            <h2 className="text-lg font-bold font-serif text-[#181614]">
+              9. General Provisions and Dispute Resolution
             </h2>
             <p>
               These terms are governed exclusively by the laws of the State of Washington, USA, without regard to conflict of laws principles. Any disputes, claims, or legal actions shall be resolved in the state and federal courts located in Seattle, Washington. If any portion of this agreement is deemed invalid or unenforceable, the remaining terms shall continue in full force and effect.

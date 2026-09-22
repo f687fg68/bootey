@@ -184,6 +184,10 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                       <Lock className="w-3.5 h-3.5 text-[#a8422b]" />
                       <span>ZIP download unlocks immediately upon payment</span>
                     </div>
+
+                    <div className="text-center text-[10px] font-mono-code text-[#8c857b] pt-1">
+                      Instant delivery · Due to the digital nature, sales are final · Support: o88gfdde@gmail.com
+                    </div>
                   </>
                 )}
               </div>

@@ -22,7 +22,6 @@ import {
   AIDisclosurePage, 
   FormatGuidePage, 
   FAQsPage, 
-  ContactPage,
   AboutPage,
   EditorialPrinciplesPage,
   TermsOfPurchasePage,
@@ -37,7 +36,6 @@ export type AppView =
   | 'ai-disclosure' 
   | 'format-guide' 
   | 'faqs' 
-  | 'contact'
   | 'about'
   | 'editorial'
   | 'terms-of-purchase'
@@ -117,8 +115,6 @@ export default function App() {
         setCurrentView('format-guide');
       } else if (viewParam === 'faqs') {
         setCurrentView('faqs');
-      } else if (viewParam === 'contact') {
-        setCurrentView('contact');
       } else if (viewParam === 'about') {
         setCurrentView('about');
       } else if (viewParam === 'editorial') {
@@ -187,10 +183,6 @@ export default function App() {
     } else if (view === 'faqs') {
       setCurrentView('faqs');
       window.history.pushState({}, '', `${window.location.pathname}?view=faqs`);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else if (view === 'contact') {
-      setCurrentView('contact');
-      window.history.pushState({}, '', `${window.location.pathname}?view=contact`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else if (view === 'about') {
       setCurrentView('about');
@@ -364,14 +356,7 @@ export default function App() {
         )}
 
         {/* ======================================================== */}
-        {/* VIEW 8: DETAILED CONTACT STUDIO PAGE */}
-        {/* ======================================================== */}
-        {currentView === 'contact' && (
-          <ContactPage onBack={() => handleNavigate('home')} />
-        )}
-
-        {/* ======================================================== */}
-        {/* VIEW 9: DETAILED ABOUT BOOTEY PAGE */}
+        {/* VIEW 8: DETAILED ABOUT BOOTEY PAGE */}
         {/* ======================================================== */}
         {currentView === 'about' && (
           <AboutPage onBack={() => handleNavigate('home')} />

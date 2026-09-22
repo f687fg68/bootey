@@ -131,15 +131,15 @@ export const Footer: React.FC<FooterProps> = ({
                   onClick={() => onNavigate ? onNavigate('faqs') : onScrollTo('faq-section')}
                   className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  FAQs
+                  FAQs &amp; Refund Policy
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onNavigate ? onNavigate('contact') : undefined}
-                  className="hover:text-[#181614] transition-colors text-left cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('terms-of-purchase') : undefined}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Contact Studio
+                  Terms of Purchase
                 </button>
               </li>
             </ul>
@@ -275,7 +275,7 @@ export const Footer: React.FC<FooterProps> = ({
         {/* Bottom Bar matching Screenshot 7 */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-[#756F66] border-t border-[#EBE4D8]/60">
           <div>
-            © 2026 bootey — AI-assisted digital toolkits, one-time purchases.
+            © 2026 bootey — AI-assisted digital toolkits, one-time purchases. Instant digital delivery; all sales final.
           </div>
 
           <div className="flex items-center gap-6">

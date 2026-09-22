@@ -391,6 +391,19 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 </div>
               )}
 
+              {/* Friendly & Professional No-Refund & Fulfillment Notice */}
+              <div className="p-3.5 rounded-2xl bg-[#F5EFE6] border border-[#EBE4D8] text-[11px] leading-relaxed text-[#524c44] flex items-start gap-2.5">
+                <ShieldCheck className="w-4 h-4 text-[#a8422b] shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <p className="font-semibold text-[#181614] font-mono-code text-[11px]">
+                    Instant Digital Delivery &amp; Refund Policy
+                  </p>
+                  <p className="text-[#756F66]">
+                    Because our toolkits are provided as instant digital packages (.ZIP) with immediate, permanent access to fully editable spreadsheets and unencrypted files, all digital purchases are final and we do not offer refunds. We warmly encourage you to review the preview excerpts and file format guide before completing your order. If you encounter any technical difficulty accessing or opening your files, our team is always delighted to assist at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a>.
+                  </p>
+                </div>
+              </div>
+
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[#EBE4D8] text-center">
                 <div className="space-y-0.5">
