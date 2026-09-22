@@ -22,6 +22,7 @@ import {
   HelpCircle,
   Lock,
   Key,
+  Info,
 } from 'lucide-react';
 import { Toolkit } from '../types';
 import { TOOLKITS } from '../data/toolkitsData';
@@ -404,6 +405,19 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 </div>
               </div>
 
+              {/* Friendly & Professional Advisory Disclaimer */}
+              <div className="p-4 rounded-2xl bg-[#FAF7F2] border border-[#EBE4D8] text-[11px] leading-relaxed text-[#524c44] flex items-start gap-3">
+                <Info className="w-4 h-4 text-[#a8422b] shrink-0 mt-0.5" />
+                <div className="space-y-1">
+                  <p className="font-bold text-[#181614] font-mono-code text-[11px] uppercase tracking-wider flex items-center gap-1.5">
+                    <span>Friendly Note on Professional Guidance</span>
+                  </p>
+                  <p className="text-[#686259]">
+                    This toolkit is an educational, self-guided organizational system designed to support your personal clarity, planning, and workflow. While created with great care, it does not constitute or replace individualized medical, psychiatric, legal, tax, or financial advice. For specific diagnostic, clinical, or specialized professional matters, we always encourage consulting with a qualified, licensed practitioner.
+                  </p>
+                </div>
+              </div>
+
               {/* Trust Badges */}
               <div className="grid grid-cols-3 gap-2 pt-3 border-t border-[#EBE4D8] text-center">
                 <div className="space-y-0.5">
@@ -427,7 +441,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
               </div>
 
               <div className="pt-2 text-center text-[10px] font-mono-code text-[#8c857b]">
-                Instant digital fulfillment · All digital sales are final · Support: o88gfdde@gmail.com
+                Instant digital delivery · All sales final · Self-guided resource (does not replace professional advice)
               </div>
             </div>
 
@@ -637,6 +651,20 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                 Purchasing this toolkit grants you perpetual, non-exclusive rights to read, print, and implement all
                 materials for your personal and internal commercial workflows. Resale or unauthorized redistribution of
                 the raw digital ZIP package is prohibited.
+              </p>
+            </div>
+
+            {/* Scope of Guidance & Professional Advice Disclaimer */}
+            <div className="p-6 rounded-3xl bg-[#FAF7F2] border border-[#EBE4D8] space-y-3 text-xs text-[#756F66]">
+              <div className="flex items-center gap-2 font-mono-code font-bold text-[#181614] uppercase">
+                <Info className="w-4 h-4 text-[#a8422b]" />
+                <span>Scope of Guidance &amp; Professional Advice Note</span>
+              </div>
+              <p className="leading-relaxed text-[#524c44]">
+                This toolkit is designed to provide practical frameworks, structured logs, and operational templates to support your independent organization, clarity, and productivity. It is not intended to substitute for, nor does it constitute, tailored legal counsel, clinical psychiatric or medical evaluation, professional investment guidance, or certified tax preparation.
+              </p>
+              <p className="text-[11px] leading-relaxed text-[#756F66]">
+                While every module has been crafted with rigorous attention to detail, using our resources does not create a fiduciary, doctor-patient, or attorney-client relationship. If you are navigating complex legal questions, health concerns, or specialized tax preparation, we warmly recommend collaborating directly with an accredited, licensed professional.
               </p>
             </div>
           </div>

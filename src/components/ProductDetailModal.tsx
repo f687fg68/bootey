@@ -1,5 +1,5 @@
 import React from 'react';
-import { X, Check, FileText, ArrowRight, ShieldCheck, Download, ExternalLink, FileArchive, Lock } from 'lucide-react';
+import { X, Check, FileText, ArrowRight, ShieldCheck, Download, ExternalLink, FileArchive, Lock, Info } from 'lucide-react';
 import { Toolkit } from '../types';
 import { AestheticCover } from './AestheticCover';
 import { downloadToolkitZip } from '../utils/zipDownloader';
@@ -190,6 +190,19 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                     </div>
                   </>
                 )}
+
+                {/* Friendly Professional Advice Disclaimer Box */}
+                <div className="p-3.5 rounded-xl bg-[#FAF7F2] border border-[#EBE4D8] flex items-start gap-2.5 text-[11px] leading-relaxed text-[#524c44] mt-3">
+                  <Info className="w-3.5 h-3.5 text-[#a8422b] shrink-0 mt-0.5" />
+                  <div>
+                    <span className="font-bold font-mono-code text-[#181614] block text-[10px] uppercase tracking-wider mb-0.5">
+                      Friendly Note on Professional Guidance
+                    </span>
+                    <span className="text-[#686259]">
+                      This toolkit is a self-guided educational resource and organizational framework. It does not replace or constitute licensed medical, psychiatric, legal, financial, or tax counsel. For specific diagnostic or specialized guidance, we always recommend consulting a qualified practitioner.
+                    </span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
