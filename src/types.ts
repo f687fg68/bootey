@@ -1,10 +1,28 @@
 export type CategoryType =
   | 'all'
   | 'health'
+  | 'mental-health'
   | 'finance'
   | 'career'
-  | 'mindset'
-  | 'systems';
+  | 'family'
+  | 'caregiving'
+  | 'legal';
+
+export interface ZipManifestItem {
+  name: string;
+  size: string;
+  type: string;
+  description: string;
+}
+
+export interface ZipFileInfo {
+  fileName: string;
+  fileSize: string;
+  filesCount: number;
+  fileTypes: string[];
+  downloadPath?: string;
+  manifest: ZipManifestItem[];
+}
 
 export interface Toolkit {
   id: string;
@@ -18,11 +36,12 @@ export interface Toolkit {
   pages: number;
   readTime: string;
   formats: string[];
-  urgencyBadge: {
+  urgencyBadge?: {
     text: string;
     type: 'urgent' | 'popular' | 'exclusive' | 'limited';
   };
-  copiesRemaining: number;
+  coverBadge?: 'POPULAR' | 'MEGA BUNDLE' | 'NEW' | 'FEATURED';
+  copiesRemaining?: number;
   highlightMechanisms: string[];
   colorTheme: {
     primary: string;
@@ -33,6 +52,45 @@ export interface Toolkit {
   description: string;
   tableOfContents: string[];
   excerpt: string;
+  // Polar Checkout Link
+  polarCheckoutUrl?: string;
+  // Zip integration specs
+  zipFile: ZipFileInfo;
+  // Cover rendering specifics
+  coverMeta?: {
+    superTitle?: string;
+    subHeader?: string;
+    italicAccent?: string;
+    tagline?: string;
+    statBadges?: { label: string; value: string }[];
+    metricPills?: string[];
+    volumeNotice?: string;
+    quoteOrStat?: string;
+    styleVariant:
+      | 'glp1'
+      | 'decoder'
+      | 'dark-minimal'
+      | 'reduction'
+      | 'becoming'
+      | 'breakup'
+      | 'rebound'
+      | 'threshold'
+      | 'grief'
+      | 'caregiver'
+      | 'fire'
+      | 'tax'
+      | 'couples'
+      | 'pricing'
+      | 'str'
+      | 'brag'
+      | 'craft'
+      | 'adhd-parent'
+      | 'ivf'
+      | 'cancer'
+      | 'divorce-48'
+      | 'divorce-checklist'
+      | 'wedding';
+  };
 }
 
 export interface DownloadItem {
@@ -55,4 +113,12 @@ export interface DownloadItem {
 export interface CartItem {
   toolkit: Toolkit;
   addedAt: number;
+}
+
+export interface PaidProductRecord {
+  productId: string;
+  productCode: string;
+  productTitle: string;
+  paidAt: string;
+  checkoutId?: string;
 }

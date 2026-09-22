@@ -4,15 +4,31 @@ import { ArrowUpRight } from 'lucide-react';
 interface HeroProps {
   onBrowseLibrary: () => void;
   onViewLicensing: () => void;
+  onViewTherapistPack: () => void;
 }
 
 export const Hero: React.FC<HeroProps> = ({
   onBrowseLibrary,
   onViewLicensing,
+  onViewTherapistPack,
 }) => {
   return (
-    <section id="hero" className="relative pt-10 pb-20 sm:pt-14 sm:pb-24 overflow-hidden bg-[#FAF7F2]">
+    <section id="hero" className="relative pt-6 pb-20 sm:pt-10 sm:pb-24 overflow-hidden bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Dynamic New Release Spotlight Ribbon */}
+        <div className="mb-8 flex justify-start">
+          <button
+            onClick={onViewTherapistPack}
+            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#a8422b]/10 text-[#a8422b] text-[11px] sm:text-xs font-mono-code font-bold hover:bg-[#a8422b]/20 transition-all cursor-pointer group shadow-2xs border border-[#a8422b]/15"
+            id="spotlight-ribbon-btn"
+          >
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a8422b] opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a8422b]"></span>
+            </span>
+            <span>NEW RELEASE: Therapist Carousel Pack (BT-19) is live · View details & purchase →</span>
+          </button>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
           {/* Left Column: Hero Typography, CTAs & Stats */}
           <div className="lg:col-span-6 xl:col-span-5 space-y-7 pt-2">

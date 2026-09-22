@@ -1,6 +1,6 @@
 {
-  "name": "bootey — Native Desktop App",
-  "description": "Download bootey. Yours instantly. The ultimate native desktop app for power users. Fast, offline-first, no accounts, no subscriptions, just pure productivity.",
+  "name": "bootey — Curated Digital Toolkits",
+  "description": "Curated digital toolkits. Yours instantly. 28 premium toolkits across health, finance, career, family and more. Thoughtfully organized, instantly downloadable.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }

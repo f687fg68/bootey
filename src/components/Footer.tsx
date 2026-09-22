@@ -1,229 +1,319 @@
-import React, { useState } from 'react';
-import { ArrowUpRight, Check, Monitor, Apple, ShieldCheck, Mail } from 'lucide-react';
+import React from 'react';
+import { ArrowUpRight } from 'lucide-react';
 
 interface FooterProps {
   onScrollTo: (id: string) => void;
-  onDownloadOs: (platform: 'macos' | 'windows') => void;
+  onOpenLibrary?: () => void;
+  onOpenCategory?: (category: string) => void;
+  onNavigate?: (view: any) => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onScrollTo, onDownloadOs }) => {
-  const [email, setEmail] = useState('');
-  const [subscribed, setSubscribed] = useState(false);
+export const Footer: React.FC<FooterProps> = ({ 
+  onScrollTo, 
+  onOpenLibrary, 
+  onOpenCategory,
+  onNavigate 
+}) => {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
-  const handleSubscribe = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email.trim()) {
-      setSubscribed(true);
-      setTimeout(() => {
-        setEmail('');
-        setSubscribed(false);
-      }, 4000);
+  const handleLibraryClick = () => {
+    if (onOpenLibrary) {
+      onOpenLibrary();
+    } else {
+      onScrollTo('toolkits-library');
     }
   };
 
   return (
-    <footer className="bg-[#181614] text-[#FAF7F2] pt-20 pb-12 border-t border-[#292622] relative overflow-hidden">
+    <footer className="bg-[#FAF7F2] text-[#181614] pt-16 pb-12 border-t border-[#EBE4D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Newsletter / Stay in the Loop Section */}
-        <div className="bg-[#211e1a] rounded-3xl p-8 sm:p-12 border border-[#33302c] mb-16 shadow-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-            <div className="lg:col-span-7 space-y-2">
-              <h3 className="text-2xl sm:text-3xl font-editorial font-bold text-white">
-                Stay in the loop.
-              </h3>
-              <p className="text-xs sm:text-sm text-[#a0988c] max-w-xl leading-relaxed">
-                Receive new release builds, performance notes, and desktop app updates directly to your inbox. No marketing spam, ever.
-              </p>
-            </div>
-
-            <div className="lg:col-span-5">
-              {subscribed ? (
-                <div className="flex items-center gap-2 p-3.5 bg-emerald-950/60 border border-emerald-700/50 rounded-full text-emerald-300 text-xs font-mono-code">
-                  <Check className="w-4 h-4 text-emerald-400" />
-                  <span>You are on the dispatch list. Welcome aboard.</span>
-                </div>
-              ) : (
-                <form onSubmit={handleSubscribe} className="flex items-center gap-2">
-                  <input
-                    type="email"
-                    required
-                    placeholder="Your email address"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 px-4 py-3 bg-[#181614] border border-[#3d3832] rounded-full text-xs text-white placeholder-[#756F66] focus:outline-none focus:border-[#b4532a] font-mono-code"
-                  />
-                  <button
-                    type="submit"
-                    className="px-6 py-3 bg-[#FAF7F2] hover:bg-[#b4532a] text-[#181614] hover:text-white rounded-full text-xs font-semibold tracking-wide transition-colors cursor-pointer shrink-0"
-                  >
-                    Subscribe
-                  </button>
-                </form>
-              )}
-            </div>
-          </div>
-        </div>
-
-        {/* Navigation Columns */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 pb-16 border-b border-[#292622]">
-          {/* Brand Col */}
+        {/* 4 Navigation Columns matching Screenshots 6 & 7 */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-16 border-b border-[#EBE4D8]">
+          {/* Column 1: Library */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2">
-              <span className="text-3xl font-bold font-sans tracking-tight text-white">
-                bootey<sup className="text-base font-normal">®</sup>
-              </span>
-            </div>
-            <p className="text-xs text-[#a0988c] leading-relaxed max-w-sm">
-              The ultimate native desktop app for power users. Ultra-fast, offline-first, no accounts, no subscriptions.
-            </p>
-            <div className="flex items-center gap-2 text-[11px] font-mono-code text-[#756F66]">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-              <span>Native Engine v2.4.0 Active</span>
-            </div>
-          </div>
-
-          {/* Features Col */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#d8cebe]">
-              Features
+            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#181614]">
+              Library
             </h4>
-            <ul className="space-y-2 text-xs text-[#a0988c]">
+            <ul className="space-y-2.5 text-xs text-[#756F66]">
               <li>
                 <button
-                  onClick={() => onScrollTo('hero')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Native Desktop Interface
+                  All 28 Digital Toolkits
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('hero')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Sub-2ms Local Search
+                  Health & Wellness
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('download-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  100% Offline Architecture
+                  Mental Health
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('download-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Local Encrypted Storage
+                  Finance & Business
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                >
+                  Career & Creator
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={handleLibraryClick}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                >
+                  Family & Legal
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onScrollTo('toolkits-library')}
+                  className="hover:text-[#a8422b] font-medium transition-colors cursor-pointer text-left"
+                >
+                  View All 28 Toolkits →
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Desktop App Col */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#d8cebe]">
-              Desktop App
+          {/* Column 2: Support */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#181614]">
+              Support
             </h4>
-            <ul className="space-y-2 text-xs text-[#a0988c]">
+            <ul className="space-y-2.5 text-xs text-[#756F66]">
               <li>
                 <button
-                  onClick={() => onDownloadOs('macos')}
-                  className="hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('licensing') : onScrollTo('licensing-section')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  <Apple className="w-3.5 h-3.5 text-[#b4532a]" />
-                  <span>Download .dmg (macOS)</span>
+                  Licensing &amp; Usage
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onDownloadOs('windows')}
-                  className="hover:text-white transition-colors flex items-center gap-1.5 cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('ai-disclosure') : onScrollTo('licensing-section')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  <Monitor className="w-3.5 h-3.5 text-[#b4532a]" />
-                  <span>Download .exe (Windows)</span>
+                  AI Disclosure
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('download-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('format-guide') : onScrollTo('faq-section')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Installation Guide
+                  Format Guide
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('download-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('faqs') : onScrollTo('faq-section')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  SHA-256 Checksums
+                  FAQs
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => onNavigate ? onNavigate('contact') : undefined}
+                  className="hover:text-[#181614] transition-colors text-left cursor-pointer"
+                >
+                  Contact Studio
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Licensing & Trust */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#d8cebe]">
-              Licensing
+          {/* Column 3: Studio */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#181614]">
+              Studio
             </h4>
-            <ul className="space-y-2 text-xs text-[#a0988c]">
-              <li>
+            <ul className="space-y-2.5 text-xs text-[#756F66]">
+               <li>
                 <button
-                  onClick={() => onScrollTo('licensing-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('about') : onScrollTo('hero')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Personal Lifetime License
+                  About bootey
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('licensing-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('editorial') : onScrollTo('licensing-section')}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  Commercial & Professional Use
+                  Editorial Principles
                 </button>
               </li>
               <li>
                 <button
-                  onClick={() => onScrollTo('faq-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                  onClick={() => onNavigate ? onNavigate('terms-of-purchase') : undefined}
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
                 >
-                  30-Day Money-Back Guarantee
+                  Terms of Purchase
                 </button>
               </li>
+            </ul>
+          </div>
+
+          {/* Column 4: Follow */}
+          <div className="space-y-4">
+            <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#181614]">
+              Follow
+            </h4>
+            <ul className="space-y-2.5 text-xs text-[#756F66]">
               <li>
-                <button
-                  onClick={() => onScrollTo('faq-section')}
-                  className="hover:text-white transition-colors cursor-pointer"
+                <a
+                  href="https://twitter.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
                 >
-                  Frequently Asked Questions
-                </button>
+                  <span>X / Twitter</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://instagram.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Instagram</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://youtube.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>YouTube</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://facebook.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Facebook</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://tiktok.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>TikTok</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://snapchat.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Snapchat</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://pinterest.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Pinterest</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://linkedin.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>LinkedIn</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://threads.net"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
+                >
+                  <span>Threads</span>
+                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
+                </a>
               </li>
             </ul>
           </div>
         </div>
 
-        {/* Bottom Metadata & Links */}
-        <div className="py-8 flex flex-wrap items-center justify-between gap-4 text-xs font-mono-code text-[#756F66]">
-          <div>
-            © 2026 bootey. Purchase once, use forever. No subscriptions.
-          </div>
-          <div className="flex items-center gap-6">
-            <span className="hover:text-white transition-colors cursor-pointer">Privacy Policy</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Terms of Service</span>
-            <span className="hover:text-white transition-colors cursor-pointer">Security Hashes</span>
-          </div>
-        </div>
-
-        {/* Monumental Wordmark */}
-        <div className="pt-6 pb-2 text-center select-none overflow-hidden">
-          <div className="text-[14vw] font-black tracking-tighter text-[#211e1a] hover:text-[#27231f] transition-colors leading-none font-sans">
+        {/* Monumental Wordmark matching Screenshot 7 */}
+        <div className="pt-12 pb-6 text-center select-none overflow-hidden">
+          <div className="text-[15vw] font-editorial font-bold tracking-tighter text-[#EBE4D8] leading-none select-none">
             bootey®
+          </div>
+        </div>
+
+        {/* Bottom Bar matching Screenshot 7 */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-mono-code text-[#756F66] border-t border-[#EBE4D8]/60">
+          <div>
+            © 2026 bootey — AI-assisted digital toolkits, one-time purchases.
+          </div>
+
+          <div className="flex items-center gap-6">
+            <button
+              onClick={() => onNavigate ? onNavigate('terms-and-disclaimer') : undefined}
+              className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+            >
+              Terms · Disclaimer
+            </button>
+
+            <button
+              onClick={scrollToTop}
+              className="text-[#181614] hover:text-[#a8422b] transition-colors cursor-pointer font-medium"
+            >
+              Back to top ↑
+            </button>
           </div>
         </div>
       </div>

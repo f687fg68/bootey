@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Plus, Minus } from 'lucide-react';
+import { ChevronDown, Plus, Minus } from 'lucide-react';
 
 interface FaqItem {
   question: string;
@@ -8,34 +8,34 @@ interface FaqItem {
 
 const FAQ_ITEMS: FaqItem[] = [
   {
-    question: 'What operating systems and platforms does bootey support?',
+    question: 'Are these toolkits a one-time purchase?',
     answer:
-      'bootey is distributed as native binaries for macOS (.dmg, Universal Silicon M1/M2/M3/M4 & Intel 64-bit) and Windows (.exe, x64). Both builds run directly on your hardware without heavy runtime dependencies or browser containers.',
+      'Yes. Always. You buy once, you download immediately, and the files are yours forever. There are no subscriptions, no accounts to maintain, and no renewal fees.',
   },
   {
-    question: 'How does bootey operate 100% offline?',
+    question: 'Were these made by AI?',
     answer:
-      'bootey indexes your documents and files directly on your machine into a local encrypted SQLite database. Search latency is sub-2ms, queries run in local memory, and zero telemetry packets or background pings ever leave your machine.',
+      'Our toolkits are developed through an AI-assisted workflow: large-scale research synthesis, pattern recognition, and initial drafting are done with advanced models, followed by human editorial review, structuring, and formatting. We disclose this upfront because we believe in transparency.',
   },
   {
-    question: 'Do I need an account or recurring subscription?',
+    question: 'Can I use these for professional advice?',
     answer:
-      'No. We reject software-as-a-service rent-seeking. bootey is a one-time purchase with a permanent lifetime license. There are no logins, no accounts, no subscriptions, and no recurring renewal fees.',
+      'No. Every toolkit is designed for informational and educational purposes only. They are not substitutes for medical, psychological, legal, or financial professional counsel. See our full disclaimer for details.',
   },
   {
-    question: 'Can I install bootey on multiple personal computers?',
+    question: 'What format are the products?',
     answer:
-      'Yes. Your personal license entitles you to install bootey Desktop on your primary and secondary personal machines (e.g., your MacBook Pro and your Windows desktop work rig). No arbitrary device limits or DRM hurdles.',
+      'Most toolkits are delivered as beautifully formatted, printable PDFs. Interactive products may include Notion templates, CSV spreadsheets, or Markdown files. Formats are clearly listed on each product card.',
   },
   {
-    question: 'What if macOS Gatekeeper or Windows SmartScreen displays a prompt?',
+    question: 'How do I receive updates?',
     answer:
-      'Because bootey is distributed directly outside proprietary corporate app stores to preserve user privacy and avoid recurring 30% platform cuts, your OS may display a first-time gatekeeper prompt. On macOS, click "Open" or select "Open Anyway" in System Settings. On Windows, click "More Info" → "Run Anyway". We publish cryptographic SHA-256 checksums for every release build so you can verify binary integrity.',
+      'When a toolkit is meaningfully updated, everyone who purchased it receives the new version via email at no extra charge. We believe in taking care of early adopters.',
   },
   {
     question: 'What is your refund policy?',
     answer:
-      'If bootey does not exceed your performance expectations within 30 days of purchase, email support@bootey.co with your receipt ID for a prompt 100% refund. No questions asked.',
+      'Due to the digital nature of our toolkits, all sales are final and we do not offer refunds once files have been accessed or downloaded. We kindly encourage you to review product specifications and previews carefully before purchasing. If you experience any technical difficulty opening your files, please email us at o88gfdde@gmail.com and our team will be delighted to assist you.',
   },
 ];
 
@@ -48,51 +48,44 @@ export const FaqSection: React.FC = () => {
 
   return (
     <section id="faq-section" className="py-20 sm:py-28 bg-[#FAF7F2] border-t border-[#EBE4D8]">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header matching Screenshots 4 & 5 */}
         <div className="text-center mb-16 space-y-3">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#EBE4D8] text-[#181614] text-xs font-mono-code font-semibold tracking-wider uppercase">
-            ANSWERS & ASSURANCE
+          <div className="text-xs font-mono-code font-bold tracking-[0.2em] text-[#a8422b] uppercase">
+            SUPPORT
           </div>
-          <h2 className="text-4xl sm:text-5xl font-editorial font-normal text-[#181614] leading-tight">
-            Fine print, in plain words.
+          <h2 className="text-3xl sm:text-5xl font-editorial font-normal text-[#181614] leading-tight tracking-tight">
+            Fine print, <span className="italic text-[#a8422b]">in plain words.</span>
           </h2>
-          <p className="text-base text-[#756F66]">
-            Everything you need to know about bootey desktop app, downloads, and licensing terms.
-          </p>
         </div>
 
-        {/* Accordion List */}
-        <div className="space-y-4">
+        {/* FAQ Accordion List matching Screenshots 4 & 5 */}
+        <div className="divide-y divide-[#EBE4D8]">
           {FAQ_ITEMS.map((item, idx) => {
             const isOpen = openIndex === idx;
+
             return (
-              <div
-                key={idx}
-                className="bg-white rounded-2xl border border-[#EBE4D8] overflow-hidden transition-all shadow-2xs"
-              >
+              <div key={idx} className="py-6 transition-colors">
                 <button
                   onClick={() => toggleFaq(idx)}
-                  className="w-full text-left p-6 sm:p-7 flex items-center justify-between gap-4 cursor-pointer hover:bg-[#FAF7F2]/40 transition-colors"
+                  className="w-full flex items-center justify-between text-left group cursor-pointer"
                   aria-expanded={isOpen}
                 >
-                  <span className="font-editorial text-lg sm:text-xl font-bold text-[#181614]">
+                  <span className="text-lg sm:text-xl font-editorial font-normal text-[#181614] group-hover:text-[#a8422b] transition-colors pr-4">
                     {item.question}
                   </span>
-                  <div
-                    className={`w-7 h-7 rounded-full flex items-center justify-center shrink-0 border transition-colors ${
-                      isOpen
-                        ? 'bg-[#181614] text-white border-[#181614]'
-                        : 'bg-[#FAF7F2] text-[#756F66] border-[#EBE4D8]'
-                    }`}
-                  >
-                    {isOpen ? <Minus className="w-3.5 h-3.5" /> : <Plus className="w-3.5 h-3.5" />}
-                  </div>
+                  <span className="shrink-0 p-1 text-[#756F66] group-hover:text-[#181614]">
+                    {isOpen ? (
+                      <Minus className="w-5 h-5 text-[#a8422b]" />
+                    ) : (
+                      <Plus className="w-5 h-5" />
+                    )}
+                  </span>
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 sm:px-7 pb-6 text-xs sm:text-sm text-[#756F66] leading-relaxed border-t border-[#EBE4D8]/60 pt-4">
-                    {item.answer}
+                  <div className="pt-4 text-xs sm:text-sm text-[#756F66] leading-relaxed max-w-2xl animate-in fade-in duration-200">
+                    <p>{item.answer}</p>
                   </div>
                 )}
               </div>
