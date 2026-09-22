@@ -241,34 +241,12 @@ export const Footer: React.FC<FooterProps> = ({
               </li>
               <li>
                 <a
-                  href="https://snapchat.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
-                >
-                  <span>Snapchat</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
-                </a>
-              </li>
-              <li>
-                <a
                   href="https://pinterest.com"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
                 >
                   <span>Pinterest</span>
-                  <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[#181614] transition-colors inline-flex items-center gap-1"
-                >
-                  <span>LinkedIn</span>
                   <ArrowUpRight className="w-3 h-3 text-[#a0988c]" />
                 </a>
               </li>
