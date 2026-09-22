@@ -151,7 +151,7 @@ export const ProductPage: React.FC<ProductPageProps> = ({
       )}
 
       {/* Top Breadcrumb & Product Switcher Bar */}
-      <div className="border-b border-[#EBE4D8] bg-[#FAF7F2]/95 backdrop-blur-sm sticky top-20 z-30">
+      <div className="border-b border-[#EBE4D8] bg-[#FAF7F2]/95 backdrop-blur-sm sticky top-16 sm:top-20 z-30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between gap-2">
           {/* Back to Library */}
           <button
@@ -721,30 +721,30 @@ export const ProductPage: React.FC<ProductPageProps> = ({
 
       {/* Sticky Bottom Action Bar when scrolled */}
       {showStickyBar && (
-        <div className="fixed bottom-0 inset-x-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-t border-[#EBE4D8] py-3 px-4 shadow-lg animate-in slide-in-from-bottom duration-200">
-          <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-            <div className="flex items-center gap-3 min-w-0">
+        <div className="fixed bottom-0 inset-x-0 z-40 bg-[#FAF7F2]/95 backdrop-blur-md border-t border-[#EBE4D8] py-2.5 px-3.5 sm:py-3 sm:px-4 shadow-xl animate-in slide-in-from-bottom duration-200 pb-[calc(0.625rem+env(safe-area-inset-bottom))]">
+          <div className="max-w-7xl mx-auto flex items-center justify-between gap-2.5 sm:gap-4">
+            <div className="flex items-center gap-2.5 sm:gap-3 min-w-0">
               <span className="hidden sm:inline-block px-2.5 py-1 rounded-md bg-[#EBE4D8] text-[11px] font-mono-code font-bold text-[#181614] shrink-0">
                 {toolkit.code}
               </span>
               <div className="min-w-0">
-                <div className="font-editorial font-bold text-sm sm:text-base text-[#181614] truncate">
+                <div className="font-editorial font-bold text-xs sm:text-base text-[#181614] truncate">
                   {toolkit.title}
                 </div>
-                <div className="text-xs font-mono-code text-[#756F66] flex items-center gap-2">
-                  <span className="font-bold text-[#181614]">${toolkit.price.toFixed(2)} USD</span>
-                  <span>·</span>
-                  <span className="truncate">{toolkit.zipFile.fileName}</span>
+                <div className="text-[11px] sm:text-xs font-mono-code text-[#756F66] flex items-center gap-1.5">
+                  <span className="font-bold text-[#181614]">${toolkit.price.toFixed(2)}</span>
+                  <span className="hidden xs:inline">·</span>
+                  <span className="truncate hidden xs:inline">{toolkit.zipFile.fileName}</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center gap-2.5 shrink-0">
+            <div className="flex items-center gap-2 shrink-0">
               {isVerified ? (
                 <button
                   onClick={handleDownload}
                   disabled={isDownloading}
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-mono-code text-xs font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-sm"
+                  className="flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-mono-code text-xs font-bold tracking-wider uppercase transition-all cursor-pointer shadow-sm active:scale-95 min-h-[44px]"
                 >
                   <Download className={`w-3.5 h-3.5 ${isDownloading ? 'animate-bounce' : ''}`} />
                   <span>Download ZIP</span>
@@ -754,10 +754,11 @@ export const ProductPage: React.FC<ProductPageProps> = ({
                   href={getPolarCheckoutUrl(toolkit)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#181614] hover:bg-[#a8422b] text-white font-mono-code text-xs font-bold tracking-wider uppercase transition-colors cursor-pointer shadow-sm"
+                  className="flex items-center justify-center gap-1.5 px-4 sm:px-5 py-2.5 rounded-full bg-[#181614] hover:bg-[#a8422b] text-white font-mono-code text-xs font-bold tracking-wider uppercase transition-all cursor-pointer shadow-sm active:scale-95 min-h-[44px]"
                 >
                   <ExternalLink className="w-3.5 h-3.5 text-emerald-400" />
-                  <span>Buy with Polar · ${toolkit.price.toFixed(2)}</span>
+                  <span className="hidden xs:inline">Buy with Polar · </span>
+                  <span>${toolkit.price.toFixed(2)}</span>
                 </a>
               )}
             </div>

@@ -16,31 +16,31 @@ export const Hero: React.FC<HeroProps> = ({
     <section id="hero" className="relative pt-6 pb-20 sm:pt-10 sm:pb-24 overflow-hidden bg-[#FAF7F2]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Dynamic New Release Spotlight Ribbon */}
-        <div className="mb-8 flex justify-start">
+        <div className="mb-6 sm:mb-8 flex justify-start">
           <button
             onClick={onViewTherapistPack}
-            className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#a8422b]/10 text-[#a8422b] text-[11px] sm:text-xs font-mono-code font-bold hover:bg-[#a8422b]/20 transition-all cursor-pointer group shadow-2xs border border-[#a8422b]/15"
+            className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#a8422b]/10 text-[#a8422b] text-[11px] sm:text-xs font-mono-code font-bold hover:bg-[#a8422b]/20 transition-all cursor-pointer group shadow-2xs border border-[#a8422b]/15 text-left max-w-full"
             id="spotlight-ribbon-btn"
           >
-            <span className="relative flex h-2 w-2">
+            <span className="relative flex h-2 w-2 shrink-0">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#a8422b] opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-[#a8422b]"></span>
             </span>
-            <span>NEW RELEASE: Therapist Carousel Pack (BT-19) is live · View details & purchase →</span>
+            <span className="truncate sm:whitespace-normal">NEW RELEASE: Therapist Carousel Pack (BT-19) is live · View details →</span>
           </button>
         </div>
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
           {/* Left Column: Hero Typography, CTAs & Stats */}
-          <div className="lg:col-span-6 xl:col-span-5 space-y-7 pt-2">
+          <div className="lg:col-span-6 xl:col-span-5 space-y-6 sm:space-y-7 pt-1 sm:pt-2">
             {/* Category Eyebrow matching Screenshot */}
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-mono-code font-bold tracking-[0.22em] text-[#a8422b] uppercase">
+              <span className="text-[10px] sm:text-[11px] font-mono-code font-bold tracking-[0.2em] text-[#a8422b] uppercase">
                 PREMIUM DIGITAL TOOLKITS · AI-ASSISTED
               </span>
             </div>
 
             {/* Headline with exact typography and italic terracotta accent */}
-            <h1 className="text-5xl sm:text-6xl lg:text-[74px] font-editorial font-normal tracking-tight text-[#181614] leading-[1.04]">
+            <h1 className="text-4xl xs:text-5xl sm:text-6xl lg:text-[74px] font-editorial font-normal tracking-tight text-[#181614] leading-[1.05]">
               Curated <span className="italic text-[#a8422b] font-normal">digital</span>
               <br />
               toolkits.
@@ -49,15 +49,15 @@ export const Hero: React.FC<HeroProps> = ({
             </h1>
 
             {/* Subhead with exact copywriting from Screenshot */}
-            <p className="text-base sm:text-lg text-[#756F66] font-normal leading-relaxed max-w-lg">
+            <p className="text-sm sm:text-base lg:text-lg text-[#756F66] font-normal leading-relaxed max-w-lg">
               28 premium toolkits across health, finance, career, family and more. Thoughtfully organized, instantly downloadable — no accounts, no fees.
             </p>
 
             {/* Action Buttons matching Screenshot */}
-            <div className="flex flex-wrap items-center gap-4 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-4 pt-1">
               <button
                 onClick={onBrowseLibrary}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#181614] text-[#FAF7F2] font-semibold text-xs tracking-wider uppercase hover:bg-[#a8422b] transition-colors shadow-md group cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#181614] text-[#FAF7F2] font-semibold text-xs tracking-wider uppercase hover:bg-[#a8422b] transition-colors shadow-md group cursor-pointer min-h-[48px] active:scale-[0.98]"
                 id="hero-browse-library-btn"
               >
                 <span>BROWSE THE LIBRARY</span>
@@ -66,7 +66,7 @@ export const Hero: React.FC<HeroProps> = ({
 
               <button
                 onClick={onViewLicensing}
-                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#FAF7F2] border border-[#d8cebe] text-[#181614] font-semibold text-xs tracking-wider uppercase hover:border-[#181614] transition-all shadow-2xs cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-[#FAF7F2] border border-[#d8cebe] text-[#181614] font-semibold text-xs tracking-wider uppercase hover:border-[#181614] transition-all shadow-2xs cursor-pointer min-h-[48px] active:scale-[0.98]"
                 id="hero-licensing-btn"
               >
                 <span>LICENSING</span>
@@ -74,30 +74,30 @@ export const Hero: React.FC<HeroProps> = ({
             </div>
 
             {/* Bottom Stats matching Screenshot 1 */}
-            <div className="pt-10 mt-6 border-t border-[#EBE4D8] grid grid-cols-3 gap-6">
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
+            <div className="pt-8 sm:pt-10 mt-4 sm:mt-6 border-t border-[#EBE4D8] grid grid-cols-3 gap-2 sm:gap-6">
+              <div className="space-y-0.5 sm:space-y-1">
+                <div className="text-2xl xs:text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
                   28
                 </div>
-                <div className="text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
+                <div className="text-[9px] sm:text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
                   TOOLKITS
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
+              <div className="space-y-0.5 sm:space-y-1">
+                <div className="text-2xl xs:text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
                   7
                 </div>
-                <div className="text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
+                <div className="text-[9px] sm:text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
                   CATEGORIES
                 </div>
               </div>
 
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
+              <div className="space-y-0.5 sm:space-y-1">
+                <div className="text-2xl xs:text-3xl sm:text-4xl font-editorial font-normal text-[#181614]">
                   Premium
                 </div>
-                <div className="text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
+                <div className="text-[9px] sm:text-[10px] font-mono-code font-bold uppercase tracking-widest text-[#756F66]">
                   ALWAYS
                 </div>
               </div>
@@ -236,7 +236,7 @@ export const Hero: React.FC<HeroProps> = ({
                     </h3>
 
                     {/* 4 Numbered Steps */}
-                    <div className="grid grid-cols-2 gap-2.5 pt-1">
+                    <div className="grid grid-cols-1 xs:grid-cols-2 gap-2.5 pt-1">
                       <div className="flex items-start gap-2">
                         <span className="w-4 h-4 rounded-full bg-[#a8422b] text-white text-[9px] font-mono-code font-bold flex items-center justify-center shrink-0 mt-0.5">
                           1

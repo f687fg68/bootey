@@ -54,20 +54,20 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
     <div className="fixed inset-0 z-50 overflow-hidden bg-black/50 backdrop-blur-xs animate-in fade-in duration-200">
       <div className="absolute inset-0" onClick={onClose} />
 
-      <div className="absolute inset-y-0 right-0 max-w-full flex pl-10">
-        <div className="w-screen max-w-md bg-[#FAF7F2] border-l border-[#EBE4D8] shadow-2xl flex flex-col justify-between">
+      <div className="absolute inset-y-0 right-0 w-full sm:max-w-md flex pl-0 sm:pl-10">
+        <div className="w-full bg-[#FAF7F2] border-l border-[#EBE4D8] shadow-2xl flex flex-col justify-between">
           {/* Header */}
-          <div className="p-6 border-b border-[#EBE4D8] bg-[#F5EFE6] flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <ShoppingBag className="w-4 h-4 text-[#a8422b]" />
-              <h2 className="text-base font-editorial font-bold text-[#181614] tracking-tight">
+          <div className="p-4 sm:p-6 border-b border-[#EBE4D8] bg-[#F5EFE6] flex items-center justify-between">
+            <div className="flex items-center gap-2.5">
+              <ShoppingBag className="w-5 h-5 text-[#a8422b]" />
+              <h2 className="text-base sm:text-lg font-editorial font-bold text-[#181614] tracking-tight">
                 Your Bag ({items.length})
               </h2>
             </div>
 
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full hover:bg-[#EBE4D8] text-[#756F66] hover:text-[#181614] transition-colors cursor-pointer"
+              className="p-2.5 rounded-full hover:bg-[#EBE4D8] text-[#756F66] hover:text-[#181614] transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95"
               aria-label="Close bag"
             >
               <X className="w-5 h-5" />
@@ -195,7 +195,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
           {/* Footer Checkout Summary */}
           {items.length > 0 && (
-            <div className="p-6 border-t border-[#EBE4D8] bg-[#F5EFE6] space-y-4">
+            <div className="p-4 sm:p-6 pb-[calc(1.25rem+env(safe-area-inset-bottom))] border-t border-[#EBE4D8] bg-[#F5EFE6] space-y-4">
               <div className="space-y-1.5">
                 <div className="flex items-center justify-between text-xs text-[#756F66]">
                   <span>Total Items</span>

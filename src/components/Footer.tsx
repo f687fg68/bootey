@@ -27,20 +27,20 @@ export const Footer: React.FC<FooterProps> = ({
   };
 
   return (
-    <footer className="bg-[#FAF7F2] text-[#181614] pt-16 pb-12 border-t border-[#EBE4D8]">
+    <footer className="bg-[#FAF7F2] text-[#181614] pt-12 sm:pt-16 pb-12 pb-[calc(3rem+env(safe-area-inset-bottom))] border-t border-[#EBE4D8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* 4 Navigation Columns matching Screenshots 6 & 7 */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 pb-16 border-b border-[#EBE4D8]">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 pb-12 sm:pb-16 border-b border-[#EBE4D8]">
           {/* Column 1: Library */}
-          <div className="space-y-4">
+          <div className="space-y-3 sm:space-y-4">
             <h4 className="text-xs font-mono-code font-bold uppercase tracking-widest text-[#181614]">
               Library
             </h4>
-            <ul className="space-y-2.5 text-xs text-[#756F66]">
+            <ul className="space-y-1.5 sm:space-y-2.5 text-xs text-[#756F66]">
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   All 28 Digital Toolkits
                 </button>
@@ -48,7 +48,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   Health & Wellness
                 </button>
@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   Mental Health
                 </button>
@@ -64,7 +64,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   Finance & Business
                 </button>
@@ -72,7 +72,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   Career & Creator
                 </button>
@@ -80,7 +80,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={handleLibraryClick}
-                  className="hover:text-[#181614] transition-colors cursor-pointer text-left"
+                  className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   Family & Legal
                 </button>
@@ -88,7 +88,7 @@ export const Footer: React.FC<FooterProps> = ({
               <li>
                 <button
                   onClick={() => onScrollTo('toolkits-library')}
-                  className="hover:text-[#a8422b] font-medium transition-colors cursor-pointer text-left"
+                  className="hover:text-[#a8422b] font-medium transition-colors cursor-pointer text-left py-1 inline-block"
                 >
                   View All 28 Toolkits →
                 </button>

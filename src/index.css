@@ -14,6 +14,11 @@
 html {
   scroll-behavior: smooth;
   font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  overflow-x: hidden;
 }
 
 .font-editorial {
@@ -22,6 +27,15 @@ html {
 
 .font-mono-code {
   font-family: "JetBrains Mono", monospace;
+}
+
+/* Hide scrollbars for smooth horizontal swipe filters on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom subtle scrollbar */

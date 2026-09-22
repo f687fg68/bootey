@@ -157,17 +157,17 @@ export const LibraryPage: React.FC<LibraryPageProps> = ({
       {/* ======================================================== */}
       {/* 2. CATEGORY FILTER TABS & SEARCH / SORT BAR */}
       {/* ======================================================== */}
-      <section className="sticky top-20 z-20 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#EBE4D8] py-4">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+      <section className="sticky top-16 sm:top-20 z-20 bg-[#FAF7F2]/95 backdrop-blur-md border-b border-[#EBE4D8] py-3 sm:py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-3 sm:space-y-4">
           {/* Scrollable Category Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar scroll-smooth pb-1 -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((tab) => {
               const isActive = activeCategory === tab.id;
               return (
                 <button
                   key={tab.id}
                   onClick={() => setActiveCategory(tab.id)}
-                  className={`flex items-center gap-2 px-4 py-2 rounded-full text-xs font-mono-code whitespace-nowrap transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-4 py-2.5 sm:py-2 rounded-full text-xs font-mono-code whitespace-nowrap transition-all cursor-pointer min-h-[44px] active:scale-95 ${
                     isActive
                       ? 'bg-[#181614] text-white font-bold shadow-xs'
                       : 'bg-white text-[#524c44] border border-[#d8cebe] hover:border-[#181614] hover:text-[#181614]'
@@ -196,14 +196,14 @@ export const LibraryPage: React.FC<LibraryPageProps> = ({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Search by title, mechanism, format (e.g. PDF, Notion)..."
-                className="w-full pl-10 pr-4 py-2 bg-white rounded-full border border-[#d8cebe] focus:border-[#181614] focus:outline-hidden text-xs font-sans text-[#181614] placeholder-[#a0988c]"
+                placeholder="Search title, format, or mechanism..."
+                className="w-full pl-10 pr-8 py-2.5 sm:py-2 bg-white rounded-full border border-[#d8cebe] focus:border-[#181614] focus:outline-hidden text-base sm:text-xs font-sans text-[#181614] placeholder-[#a0988c] min-h-[44px] sm:min-h-0"
                 id="library-search-input"
               />
               {searchQuery && (
                 <button
                   onClick={() => setSearchQuery('')}
-                  className="absolute right-3.5 top-1/2 -translate-y-1/2 text-xs font-mono-code text-[#756F66] hover:text-[#181614]"
+                  className="absolute right-3.5 top-1/2 -translate-y-1/2 p-1 text-xs font-mono-code text-[#756F66] hover:text-[#181614]"
                 >
                   ✕
                 </button>
@@ -211,13 +211,13 @@ export const LibraryPage: React.FC<LibraryPageProps> = ({
             </div>
 
             {/* Sort Dropdown */}
-            <div className="flex items-center gap-2 self-end sm:self-auto text-xs font-mono-code">
-              <span className="text-[#756F66] uppercase">SORT:</span>
-              <div className="relative">
+            <div className="flex items-center justify-between sm:justify-start gap-2 text-xs font-mono-code">
+              <span className="text-[#756F66] uppercase">SORT BY:</span>
+              <div className="relative flex-1 sm:flex-none">
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value as any)}
-                  className="appearance-none bg-white border border-[#d8cebe] rounded-full px-4 py-2 pr-8 text-xs font-mono-code font-bold text-[#181614] hover:border-[#181614] focus:outline-hidden cursor-pointer"
+                  className="w-full sm:w-auto appearance-none bg-white border border-[#d8cebe] rounded-full px-4 py-2.5 sm:py-2 pr-8 text-xs font-mono-code font-bold text-[#181614] hover:border-[#181614] focus:outline-hidden cursor-pointer min-h-[44px] sm:min-h-0"
                   id="library-sort-select"
                 >
                   <option value="featured">Featured</option>

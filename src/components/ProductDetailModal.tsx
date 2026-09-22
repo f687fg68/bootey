@@ -45,36 +45,36 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 overflow-y-auto bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-0 sm:p-6 overflow-y-auto bg-black/60 backdrop-blur-xs animate-in fade-in duration-200"
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-4xl bg-[#FAF7F2] rounded-3xl border border-[#EBE4D8] shadow-2xl overflow-hidden my-8"
+        className="relative w-full max-w-4xl bg-[#FAF7F2] rounded-t-3xl sm:rounded-3xl border border-[#EBE4D8] shadow-2xl overflow-hidden my-0 sm:my-8 max-h-[90vh] sm:max-h-[85vh] flex flex-col"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
-        <div className="flex items-center justify-between px-6 py-4 border-b border-[#EBE4D8] bg-[#F5EFE6]">
-          <div className="flex items-center gap-3">
-            <span className="text-xs font-mono-code font-bold tracking-widest text-[#a8422b] uppercase">
+        <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 sm:py-4 border-b border-[#EBE4D8] bg-[#F5EFE6] shrink-0">
+          <div className="flex items-center gap-2 sm:gap-3">
+            <span className="text-[10px] sm:text-xs font-mono-code font-bold tracking-widest text-[#a8422b] uppercase truncate max-w-[140px] xs:max-w-none">
               {toolkit.categoryLabel}
             </span>
             <span className="text-[#a0988c]">·</span>
-            <span className="text-xs font-mono-code font-bold text-[#181614]">
+            <span className="text-[10px] sm:text-xs font-mono-code font-bold text-[#181614]">
               {toolkit.code}
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <button
               onClick={() => onViewFullPage(toolkit)}
-              className="flex items-center gap-1.5 text-xs font-mono-code text-[#181614] hover:text-[#a8422b] font-bold px-3 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer"
+              className="flex items-center gap-1.5 text-xs font-mono-code text-[#181614] hover:text-[#a8422b] font-bold px-2.5 py-1.5 rounded-full hover:bg-white/50 transition-colors cursor-pointer min-h-[40px]"
             >
-              <span>Full Page</span>
+              <span className="hidden xs:inline">Full Page</span>
               <ExternalLink className="w-3.5 h-3.5" />
             </button>
             <button
               onClick={onClose}
-              className="p-1.5 rounded-full hover:bg-[#EBE4D8] text-[#756F66] hover:text-[#181614] transition-colors cursor-pointer"
+              className="p-2.5 rounded-full hover:bg-[#EBE4D8] text-[#756F66] hover:text-[#181614] transition-colors cursor-pointer min-h-[44px] min-w-[44px] flex items-center justify-center active:scale-95"
               aria-label="Close modal"
             >
               <X className="w-5 h-5" />
