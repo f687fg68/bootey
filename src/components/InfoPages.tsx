@@ -156,7 +156,7 @@ export const LicensingPage: React.FC<PageProps> = ({ onBack }) => {
               7. Refund and Termination Policy
             </h2>
             <p>
-              Because our digital products are delivered as immediate, irrevocable downloads of unencrypted spreadsheets and guides, bootey does not offer refunds once an order is placed and digital packages are unlocked. We warmly invite you to review all toolkit details, table of contents previews, and format guides prior to checkout. If you ever encounter any technical questions or file access difficulties, our support team will promptly assist you at o88gfdde@gmail.com to make sure you have complete, seamless access to your files.
+              Because our digital products are delivered as immediate, irrevocable downloads of unencrypted spreadsheets and guides, bootey does not offer refunds once an order is placed and digital packages are unlocked. We warmly invite you to review all toolkit details, table of contents previews, and format guides prior to checkout. If you ever encounter any technical questions or file access difficulties, our support team will promptly assist you at t45trdds@gmail.com to make sure you have complete, seamless access to your files.
             </p>
           </div>
         </div>
@@ -438,15 +438,15 @@ export const FAQsPage: React.FC<PageProps> = ({ onBack }) => {
     },
     {
       q: 'What should I do if my download link has expired?',
-      a: 'For security reasons, secure email download links are active for 7 days. If your link expires before you can save the files to your device, simply email o88gfdde@gmail.com with your purchase confirmation, and our automated queue will promptly assist you with link access.'
+      a: 'For security reasons, secure email download links are active for 7 days. If your link expires before you can save the files to your device, simply email t45trdds@gmail.com with your purchase confirmation, and our automated queue will promptly assist you with link access.'
     },
     {
       q: 'What is your refund policy?',
-      a: 'Because our toolkits are delivered as instant digital packages (.ZIP) containing fully unlocked, editable spreadsheets, templates, and guides with immediate access upon purchase, all digital sales are final and we do not offer refunds. We warmly encourage you to review the product specifications, table of contents, and sample excerpts before placing your order. If you encounter any technical difficulty accessing, unzipping, or using your files, our friendly support team is always ready to assist at o88gfdde@gmail.com.'
+      a: 'Because our toolkits are delivered as instant digital packages (.ZIP) containing fully unlocked, editable spreadsheets, templates, and guides with immediate access upon purchase, all digital sales are final and we do not offer refunds. We warmly encourage you to review the product specifications, table of contents, and sample excerpts before placing your order. If you encounter any technical difficulty accessing, unzipping, or using your files, our friendly support team is always ready to assist at t45trdds@gmail.com.'
     },
     {
       q: 'Do you offer custom tailoring or personalized workbook creation services?',
-      a: 'Yes. If you require a custom accounting template, bespoke clinical worksheets, or specialized operations dashboards customized for your unique business, we offer dedicated custom creation contracts. Please email o88gfdde@gmail.com.'
+      a: 'Yes. If you require a custom accounting template, bespoke clinical worksheets, or specialized operations dashboards customized for your unique business, we offer dedicated custom creation contracts. Please email t45trdds@gmail.com.'
     }
   ];
 
@@ -800,7 +800,7 @@ export const TermsOfPurchasePage: React.FC<PageProps> = ({ onBack }) => {
               Because our digital toolkits are delivered instantly as full, unencrypted file archives (.ZIP) upon purchase, <strong>all digital sales are final and we do not offer refunds</strong>. We warmly encourage you to review product descriptions, included formats, and sample previews before completing your order.
             </p>
             <p>
-              If you ever experience any difficulty downloading, unzipping, or opening your files, please reach out to us at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a>. Our support team is always delighted to assist you and ensure you have full access to your purchase.
+              If you ever experience any difficulty downloading, unzipping, or opening your files, please reach out to us at <a href="mailto:t45trdds@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">t45trdds@gmail.com</a>. Our support team is always delighted to assist you and ensure you have full access to your purchase.
             </p>
           </div>
 
@@ -1035,7 +1035,7 @@ export const TermsAndDisclaimerPage: React.FC<PageProps> = ({ onBack }) => {
               8. Digital Fulfillment and Refund Policy
             </h2>
             <p>
-              Due to the immediate digital fulfillment and irrevocability of downloadable ZIP packages containing unlocked templates, bootey does not offer refunds once an order is placed and files are unlocked. We encourage buyers to explore all product previews and documentation prior to checkout. Our support team is always available to help at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a> should you need any technical assistance with accessing your files.
+              Due to the immediate digital fulfillment and irrevocability of downloadable ZIP packages containing unlocked templates, bootey does not offer refunds once an order is placed and files are unlocked. We encourage buyers to explore all product previews and documentation prior to checkout. Our support team is always available to help at <a href="mailto:t45trdds@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">t45trdds@gmail.com</a> should you need any technical assistance with accessing your files.
             </p>
           </div>
 

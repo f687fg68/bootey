@@ -60,7 +60,7 @@ EXCERPT PREVIEW:
 "${toolkit.excerpt}"
 
 SUPPORT & LICENSING:
-o88gfdde@gmail.com · https://bootey.com
+t45trdds@gmail.com · https://bootey.com
 © ${new Date().getFullYear()} bootey. All rights reserved.
 `;
 
@@ -83,7 +83,7 @@ archive or raw source templates without explicit written permission.
 All toolkits are created with the assistance of artificial intelligence and intended
 for informational, educational, and organizational purposes.
 
-For questions: o88gfdde@gmail.com
+For questions: t45trdds@gmail.com
 `;
 
   zip.file('LICENSE_PERPETUAL.txt', licenseContent);

@@ -35,7 +35,7 @@ const FAQ_ITEMS: FaqItem[] = [
   {
     question: 'What is your refund policy?',
     answer:
-      'Because our toolkits are delivered as instant digital file packages (.ZIP) with immediate, permanent access to fully editable spreadsheets and unencrypted guides, all digital sales are final and we do not offer refunds. We warmly encourage you to review each product description, excerpt preview, and format breakdown carefully prior to purchasing. If you ever experience any technical difficulty accessing, unzipping, or opening your files, please reach out to us at o88gfdde@gmail.com — our team is always delighted to assist you and ensure you have full access to your purchase.',
+      'Because our toolkits are delivered as instant digital file packages (.ZIP) with immediate, permanent access to fully editable spreadsheets and unencrypted guides, all digital sales are final and we do not offer refunds. We warmly encourage you to review each product description, excerpt preview, and format breakdown carefully prior to purchasing. If you ever experience any technical difficulty accessing, unzipping, or opening your files, please reach out to us at t45trdds@gmail.com — our team is always delighted to assist you and ensure you have full access to your purchase.',
   },
 ];
 

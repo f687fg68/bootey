@@ -246,7 +246,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
 
               {/* Friendly Refund & Support Notice */}
               <div className="pt-2 border-t border-[#EBE4D8]/80 text-[10px] font-mono-code text-[#756F66] leading-relaxed text-center">
-                Instant digital fulfillment · As digital items are delivered immediately, sales are final with no refunds. Need help? We're happy to assist at <a href="mailto:o88gfdde@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">o88gfdde@gmail.com</a>.
+                Instant digital fulfillment · As digital items are delivered immediately, sales are final with no refunds. Need help? We're happy to assist at <a href="mailto:t45trdds@gmail.com" className="underline text-[#181614] hover:text-[#a8422b]">t45trdds@gmail.com</a>.
               </div>
             </div>
           )}

@@ -66,10 +66,10 @@ export const LicensingSection: React.FC = () => {
         <div className="mt-16 text-center text-xs text-[#756F66]">
           <span>Questions about commercial or team licensing? </span>
           <a
-            href="mailto:o88gfdde@gmail.com"
+            href="mailto:t45trdds@gmail.com"
             className="text-[#181614] hover:text-[#a8422b] font-medium underline inline-flex items-center gap-0.5 ml-1 transition-colors"
           >
-            <span>o88gfdde@gmail.com</span>
+            <span>t45trdds@gmail.com</span>
             <ArrowUpRight className="w-3 h-3" />
           </a>
         </div>
