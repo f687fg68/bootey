@@ -21,6 +21,7 @@ export const Header: React.FC<HeaderProps> = ({
     setMobileMenuOpen(false);
   };
 
+  const isDigitalProductsActive = currentView === 'digital-products';
   const isLibraryActive = currentView === 'library' || activeSection === 'toolkits-library';
   const isHomeActive = currentView === 'home' && activeSection === 'hero';
 
@@ -42,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({
 
         {/* Desktop Navigation Links */}
         <div className="flex items-center gap-3 sm:gap-6">
-          <nav className="hidden sm:flex items-center gap-8 text-sm text-[#181614]">
+          <nav className="hidden sm:flex items-center gap-6 lg:gap-8 text-sm text-[#181614]">
             <button
               onClick={() => handleNavClick('home')}
               className={`transition-colors cursor-pointer pb-0.5 ${
@@ -55,15 +56,16 @@ export const Header: React.FC<HeaderProps> = ({
               Home
             </button>
             <button
-              onClick={() => handleNavClick('library')}
-              className={`transition-colors cursor-pointer pb-0.5 ${
-                isLibraryActive
-                  ? 'font-medium border-b border-[#181614] text-[#181614]'
-                  : 'text-[#756F66] hover:text-[#181614]'
+              onClick={() => handleNavClick('digital-products')}
+              className={`transition-colors cursor-pointer pb-0.5 flex items-center gap-1.5 ${
+                isDigitalProductsActive
+                  ? 'font-semibold border-b border-[#a8422b] text-[#a8422b]'
+                  : 'text-[#181614] hover:text-[#a8422b] font-medium'
               }`}
-              id="nav-library-btn"
+              id="nav-digital-products-btn"
             >
-              Shop
+              <span>Digital Products We Sell</span>
+              <span className="w-2 h-2 rounded-full bg-[#a8422b] inline-block animate-pulse" />
             </button>
             <button
               onClick={() => handleNavClick('licensing')}
@@ -102,14 +104,19 @@ export const Header: React.FC<HeaderProps> = ({
             <span className="text-xs font-mono-code text-[#756F66]">→</span>
           </button>
           <button
-            onClick={() => handleNavClick('library')}
+            onClick={() => handleNavClick('digital-products')}
             className={`w-full text-left px-4 py-3 rounded-xl text-sm font-bold flex items-center justify-between transition-colors ${
-              isLibraryActive ? 'bg-[#a8422b] text-white' : 'text-[#a8422b] hover:bg-[#a8422b]/10'
+              isDigitalProductsActive
+                ? 'bg-[#a8422b] text-white'
+                : 'text-[#a8422b] hover:bg-[#a8422b]/10 bg-[#a8422b]/5 border border-[#a8422b]/20'
             }`}
           >
-            <span>Shop (All 28 Toolkits)</span>
+            <div className="flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-[#a8422b]" />
+              <span>Digital Products We Sell</span>
+            </div>
             <span className="text-xs font-mono-code font-bold uppercase tracking-wider px-2 py-0.5 rounded-md bg-white/20">
-              28
+              28 Products
             </span>
           </button>
           <button

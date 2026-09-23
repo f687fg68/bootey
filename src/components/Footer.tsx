@@ -39,6 +39,14 @@ export const Footer: React.FC<FooterProps> = ({
             <ul className="space-y-1.5 sm:space-y-2.5 text-xs text-[#756F66]">
               <li>
                 <button
+                  onClick={() => onNavigate ? onNavigate('digital-products') : handleLibraryClick()}
+                  className="font-bold text-[#a8422b] hover:underline transition-colors cursor-pointer text-left py-1 inline-block"
+                >
+                  Digital Products We Sell →
+                </button>
+              </li>
+              <li>
+                <button
                   onClick={handleLibraryClick}
                   className="hover:text-[#181614] transition-colors cursor-pointer text-left py-1 inline-block"
                 >

@@ -3,6 +3,7 @@ import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { ProductCatalogSection } from './components/ProductCatalogSection';
 import { LibraryPage } from './components/LibraryPage';
+import { DigitalProductsPage } from './components/DigitalProductsPage';
 import { ProductPage } from './components/ProductPage';
 import { LicensingSection } from './components/LicensingSection';
 import { FaqSection } from './components/FaqSection';
@@ -30,6 +31,7 @@ import {
 
 export type AppView = 
   | 'home' 
+  | 'digital-products'
   | 'library' 
   | 'product' 
   | 'licensing' 
@@ -105,7 +107,9 @@ export default function App() {
         }
       }
 
-      if (viewParam === 'library') {
+      if (viewParam === 'digital-products' || viewParam === 'products') {
+        setCurrentView('digital-products');
+      } else if (viewParam === 'library') {
         setCurrentView('library');
       } else if (viewParam === 'licensing') {
         setCurrentView('licensing');
@@ -160,7 +164,11 @@ export default function App() {
   };
 
   const handleNavigate = (view: AppView) => {
-    if (view === 'library') {
+    if (view === 'digital-products') {
+      setCurrentView('digital-products');
+      window.history.pushState({}, '', `${window.location.pathname}?view=digital-products`);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else if (view === 'library') {
       setCurrentView('library');
       window.history.pushState({}, '', `${window.location.pathname}?view=library`);
       window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -281,6 +289,18 @@ export default function App() {
             isInCart={cart.some((c) => c.id === selectedProduct.id)}
             unlockedProductIds={unlockedProductIds}
             onRevokeVerification={handleRevokePayment}
+          />
+        )}
+
+        {/* ======================================================== */}
+        {/* VIEW 1.5: DEDICATED DIGITAL PRODUCTS WE SELL PAGE */}
+        {/* ======================================================== */}
+        {currentView === 'digital-products' && (
+          <DigitalProductsPage
+            onSelectProduct={handleOpenProductPage}
+            onAddToCart={handleAddToCart}
+            cartItemIds={cart.map((c) => c.id)}
+            unlockedProductIds={unlockedProductIds}
           />
         )}
 
